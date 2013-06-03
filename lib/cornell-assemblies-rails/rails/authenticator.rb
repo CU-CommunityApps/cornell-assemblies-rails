@@ -46,7 +46,11 @@ module CornellAssembliesRails
           @current_user.refresh if @current_user.respond_to? :refresh
           @current_user
         end
-
+        
+        def force_sso
+          false
+        end
+        
         def require_user
           unless current_user
             store_location
