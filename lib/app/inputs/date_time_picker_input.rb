@@ -1,10 +1,13 @@
-class DateTimePickerInput < Formtastic::Inputs::StringInput
-  DEFAULT_FORMAT = '%Y-%m-%d %I:%M %P'
-
+class DateTimePickerInput < SimpleForm::Inputs::StringInput
+  def input(wrapper_options)
+    @builder.datetime_picker_field(attribute_name,
+      merge_wrapper_options(input_html_options, wrapper_options))
+  end
+  
   def input_html_options
-    new_class = [super[:class], "ui-datetime-picker"].compact.join(" ")
-    super.merge( class: new_class, value: object.send(method).
-      try( :strftime, DateTimePickerInput::DEFAULT_FORMAT ) )
+    value = object.send(attribute_name)
+    super.merge( { value: object.send(attribute_name).
+      try( :to_formatted_s, :datetime_picker ) } )
   end
 end
 

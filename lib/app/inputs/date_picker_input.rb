@@ -1,16 +1,13 @@
-class DatePickerInput < Formtastic::Inputs::StringInput
-  if defined?(ActiveSupport::CoreExtensions)
-  	DATE_FORMATS = ActiveSupport::CoreExtensions::Date::Conversions::DATE_FORMATS
-  else
-    DATE_FORMATS = Date::DATE_FORMATS
+class DatePickerInput < SimpleForm::Inputs::StringInput
+  def input(wrapper_options)
+    @builder.date_picker_field(attribute_name,
+      merge_wrapper_options(input_html_options, wrapper_options))
   end
-
-  DEFAULT_FORMAT = '%Y-%m-%d'
-
+  
   def input_html_options
-    new_class = [super[:class], "ui-date-picker"].compact.join(" ")
-    super.merge( class: new_class, value: object.send(method).
-      try( :strftime, (DATE_FORMATS[:default] || DatePickerInput::DEFAULT_FORMAT) ) )
+    value = object.send(attribute_name)
+    super.merge( { value: object.send(attribute_name).
+      try( :to_formatted_s, :db ) } )
   end
 end
 
