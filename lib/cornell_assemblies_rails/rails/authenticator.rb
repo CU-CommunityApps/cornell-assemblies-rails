@@ -57,7 +57,7 @@ module CornellAssembliesRails
             session[:force_sso] = params[:force_sso] if params[:force_sso]
             return session[:force_sso] if session[:force_sso]
           end
-          false
+          true
         end
         
         def require_user
