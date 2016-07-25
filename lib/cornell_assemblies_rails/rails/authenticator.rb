@@ -64,7 +64,7 @@ module CornellAssembliesRails
           unless current_user
             store_location
             if force_sso
-              redirect_to :controller => 'Saml', :action => 'sso' , alert: 'You must log in to access this page.'
+              redirect_to :controller => 'saml', :action => 'sso'
             else
               redirect_to login_url, alert: 'You must log in to access this page.'
             end
