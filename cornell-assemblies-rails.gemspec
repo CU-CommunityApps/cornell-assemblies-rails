@@ -16,16 +16,23 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
-  s.add_dependency "railties", "> 3.2"
-  s.add_dependency "jquery-rails", "~> 2.0"
+  s.add_dependency "rails", "~> 4.1.0"
+  s.add_dependency "jquery-rails", "~> 3.1"
+  s.add_dependency "jquery-ui-rails", "~> 4.0"
   s.add_dependency "bcrypt-ruby", "~> 3.0"
-  s.add_dependency "rails3-jquery-autocomplete", "~> 1.0"
   s.add_dependency "cocoon", "~> 1.0"
+  s.add_dependency "squeel", "~> 1.0"
   s.add_dependency "cornell_ldap", "~> 1.4.3"
   s.add_dependency "bluecloth", "~> 2.0"
-  s.add_dependency "best_in_place", "~> 1.1"
-  s.add_dependency "formtastic", "~> 2.0", "~> 2.1"
-  s.add_dependency "exception_notification", "~> 2.6"
+  s.add_dependency "simple_form", "~> 3.1.0.rc2"
+  s.add_dependency "bootstrap-sass", "~> 3.1"
+  s.add_dependency "tabulous", "~> 2.0"
+  s.add_dependency "kaminari", "~> 0.14"
+  s.add_dependency "kaminari-bootstrap", "~> 3.0"
+  s.add_dependency "cornell_netid", "~> 1.1"
+  s.add_dependency "decent_exposure", "~> 2.3"
+  s.add_dependency "fullcalendar-rails", "~> 2.0"
+  s.add_dependency "bootstrap3-datetimepicker-rails", "~> 3.0"
 
   s.add_development_dependency "sqlite3"
 end
