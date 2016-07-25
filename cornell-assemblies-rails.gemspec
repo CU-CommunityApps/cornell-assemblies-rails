@@ -7,8 +7,8 @@ require "cornell-assemblies-rails/version"
 Gem::Specification.new do |s|
   s.name        = "cornell-assemblies-rails"
   s.version     = CornellAssembliesRails::VERSION
-  s.authors     = ["Ari Epstein"]
-  s.email       = ["ate2@cornell.edu"]
+  s.authors     = ["Office of the Assemblies"]
+  s.email       = ["assembly@cornell.edu"]
   s.homepage    = "https://assembly.cornell.edu/trac/cornell-assemblies-rails"
   s.summary     = "Provides asset pipeline elements to implement Cornell Office of the Assemblies look and feel."
   s.description = "This package is used to provide uniform look and feel across applications developed for the Office of the Assemblies."

@@ -54,8 +54,11 @@ module CornellAssembliesRails
         
         def require_user
           unless current_user
+            puts force_sso
+            puts sso_login_url
             store_location
             if force_sso
+              puts "force_sso if branch"
               redirect_to sso_login_url( provider: force_sso ), alert: 'You must log in to access this page.'
             else
               redirect_to login_url, alert: 'You must log in to access this page.'
