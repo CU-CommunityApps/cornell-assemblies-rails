@@ -5,17 +5,19 @@
  *= require bootstrap-datetimepicker
  *= require bootstrap-colorpicker
  */
+
+ /*
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap/theme";
+*/
 
 /* basic look and feel (inspired by nifty_generator) */
+/*
 html, body {
-  /*background-color: #d7d6d1;*/
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
 }
-
 a img {
   border: none;
 }
@@ -125,4 +127,5 @@ table {
 .warning_messages ul {
   margin: 0;
 }
+*/
 
