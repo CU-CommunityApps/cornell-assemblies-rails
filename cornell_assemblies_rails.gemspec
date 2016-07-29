@@ -28,6 +28,7 @@ Gem::Specification.new do |s|
   s.add_dependency "bootstrap-sass", "~> 3.1"
   s.add_dependency "tabulous", "~> 2.0"
   s.add_dependency "kaminari", "~> 0.14"
+  s.add_dependency "kaminari-bootstrap", "~> 3.0"
   s.add_dependency "cornell_netid", "~> 1.1"
   s.add_dependency "decent_exposure", "~> 2.3"
   s.add_dependency "fullcalendar-rails", "~> 2.0"

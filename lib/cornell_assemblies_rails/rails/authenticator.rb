@@ -32,17 +32,17 @@ module CornellAssembliesRails
         # Obtains user record for currently logged in user
         # * if sso credential is detected verifies it matches session and
         #   updates/logs in automatically as needed
-        def current_user (shib_net_id)
+        def current_user (options={})
           return @current_user unless @current_user.blank?
           @current_user = User.find(session[:user_id]) if session[:user_id]
-          if shib_net_id
-            if @current_user && @current_user.net_id != shib_net_id
+          if options[:shib_net_id]
+            if @current_user && @current_user.net_id != options[:shib_net_id]
               @current_user = nil
               reset_session_with_redirect
             end
             @current_user.refresh if @current_user.respond_to? :refresh
             return @current_user unless @current_user.blank?
-            initialize_user shib_net_id
+            initialize_user options[:shib_net_id]
             if @current_user = User.find_by_net_id( sshib_net_id )
               reset_session_with_redirect
               session[:user_id] = @current_user.id
