@@ -43,7 +43,7 @@ module CornellAssembliesRails
             @current_user.refresh if @current_user.respond_to? :refresh
             return @current_user unless @current_user.blank?
             initialize_user options[:shib_net_id]
-            if @current_user = User.find_by_net_id( shib_net_id )
+            if @current_user = User.find_by_net_id( options[:shib_net_id] )
               reset_session_with_redirect
               session[:user_id] = @current_user.id
             end
